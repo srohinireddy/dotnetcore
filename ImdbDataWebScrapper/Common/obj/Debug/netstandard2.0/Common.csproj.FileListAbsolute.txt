@@ -1,0 +1,8 @@
+D:\Practice\dotnetcore\Common\bin\Debug\netstandard2.0\Common.deps.json
+D:\Practice\dotnetcore\Common\bin\Debug\netstandard2.0\Common.dll
+D:\Practice\dotnetcore\Common\bin\Debug\netstandard2.0\Common.pdb
+D:\Practice\dotnetcore\Common\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
+D:\Practice\dotnetcore\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+D:\Practice\dotnetcore\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+D:\Practice\dotnetcore\Common\obj\Debug\netstandard2.0\Common.dll
+D:\Practice\dotnetcore\Common\obj\Debug\netstandard2.0\Common.pdb
