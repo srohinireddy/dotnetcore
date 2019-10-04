@@ -2,8 +2,17 @@
 
 namespace Common
 {
-    public class Common
+    public class StringConstants
     {
+        //TO Do: Change hardcode names
+        public static string imdbDatasetURL = "https://datasets.imdbws.com/";
+        public static string nameBasicsFile = "name.basics.tsv.gz";
+        public static string akasFile = "title.akas.tsv.gz";
+        public static string titleBasicsFile = "title.basics.tsv.gz";
+        public static string  crewFile = "title.crew.tsv.gz";
+        public static string episodeFile = "title.episode.tsv.gz";
+        public static string principalsFile = "title.principals.tsv.gz";
+        public static string ratingsFile = "title.ratings.tsv.gz";
     }
 }
 namespace IMDBDataset
