@@ -1,22 +1,36 @@
 ﻿using System;
 using System.Net;
 using Common;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using HtmlAgilityPack;
 
 namespace Downloader
 {
     public class DatasetDownloader
     {
+
         public DatasetDownloader()
         {
-            //TO Do: Change hardcode names and local download
-            var webClient = new WebClient();
-            webClient.DownloadFile(StringConstants.imdbDatasetURL,"name.basics.tsv.gz");
-            webClient.DownloadFile(StringConstants.akasFile, "title.akas.tsv.gz");
-            webClient.DownloadFile(StringConstants.titleBasicsFile, "title.basics.tsv.gz");
-            webClient.DownloadFile(StringConstants.crewFile, "title.crew.tsv.gz");
-            webClient.DownloadFile(StringConstants.episodeFile, "title.episode.tsv.gz");
-            webClient.DownloadFile(StringConstants.principalsFile, "title.principals.tsv.gz");
-            webClient.DownloadFile(StringConstants.ratingsFile, "title.ratings.tsv.gz");
+            Download(StringConstants.imdbDatasetURL);
+        }
+        private void Download(string url)
+        {
+            HtmlWeb hw = new HtmlWeb();
+            HtmlDocument doc = hw.Load(url);
+            string[] urls = doc.DocumentNode.Descendants("a").Select(node => node.Attributes["href"].Value).ToArray();
+            string[] names = doc.DocumentNode.Descendants("a").Select(node => node.InnerText).ToArray();
+            for (int i = 0; i < urls.Length; i++)
+            {
+                string u = urls[i];
+                if (u.Contains("dataset"))
+                {
+                    var webClient = new WebClient();
+                    //To DO: Optimize in asyc way 
+                    webClient.DownloadFile(u, names[i]);
+                }
+            }
         }
     }
 }
